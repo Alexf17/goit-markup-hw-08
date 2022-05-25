@@ -499,7 +499,6 @@ a {
 
 .mob-menu__soc-list {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .mob-menu__soc-item:not(:last-child) {
