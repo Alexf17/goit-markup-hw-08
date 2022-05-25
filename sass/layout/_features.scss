@@ -1,14 +1,24 @@
 .features {
-    display: flex;
-    align-content: flex-start;
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
 }
 
 .features__item {
-    width: 270px;
-}
-
-.features .features__item+.features__item {
-    margin-left: 30px;
+    @media screen and (max-width:767px) {
+        &:not(:last-child) {
+        margin-bottom: 30px;
+        }
+    }
+    @include tablet {
+        margin: 15px;
+        flex-basis: calc((100% - 60px)/2) ;
+    }
+    @include desktop {
+        flex-basis: calc((100% - 120px)/4);
+    }
 }
 
 .features__title {
@@ -20,6 +30,10 @@
     text-transform: uppercase;
     margin-top: 0px;
     margin-bottom: 10px;
+
+    @media screen and (max-width: 767px) {
+    text-align: center;
+    }
 }
 
 .features__text {
@@ -45,6 +59,4 @@
 .features__svg {
     width: 70px;
     height: 70px;
-    padding: 0;
-    margin: 0;
 }
