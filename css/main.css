@@ -3,6 +3,10 @@ body {
   color: var(--main-title-color);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 p,
 h1,
 h2,
@@ -22,6 +26,10 @@ ul {
 img {
   display: block;
   min-width: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .visually-hidden {
@@ -112,8 +120,8 @@ img {
 .logo {
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--accent-color);
   width: 134px;
@@ -122,6 +130,8 @@ img {
 @media screen and (min-width: 1200px) {
   .logo {
     width: 145px;
+    font-size: 26px;
+    line-height: 1.19;
   }
 }
 
@@ -160,8 +170,8 @@ img {
   content: "";
   top: 50%;
   left: 50%;
-  width: 528px;
-  height: 581px;
+  width: 450px;
+  height: 609px;
   color: var(--main-text-color);
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
@@ -170,6 +180,12 @@ img {
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--timing-duration), background-color var(--timing-duration), box-shadow var(--timing-duration);
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal-button {
@@ -208,10 +224,15 @@ img {
 .modal-title {
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
   color: var(--main-title-color);
   margin-bottom: 12px;
+}
+@media screen and (min-width: 1200px) {
+  .modal-title {
+    line-height: 1.15;
+  }
 }
 
 .form-field {
@@ -296,9 +317,15 @@ img {
 .check-text {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
+}
+@media screen and (min-width: 1200px) {
+  .check-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
 
 .box-icon {
@@ -351,6 +378,145 @@ img {
   color: var(--accent-color);
 }
 
+.header-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .header-mobile {
+    display: none;
+  }
+}
+
+.mob-menu {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu {
+    display: none;
+  }
+}
+
+.mob-menu__box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 768px;
+  justify-content: space-between;
+  padding: 48px 40px;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.header-mobile__open-btn {
+  padding: 10px 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  fill: #212121;
+  transition: fill var(--timing-duration);
+}
+.header-mobile__open-btn:hover, .header-mobile__open-btn:focus {
+  fill: var(--accent-color);
+}
+
+.header-mobile__close-btn {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: auto;
+  padding: 10px 15px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  fill: #212121;
+  transition: fill var(--timing-duration);
+}
+.header-mobile__close-btn:hover, .header-mobile__close-btn:focus {
+  fill: var(--accent-color);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.mob-menu__item {
+  margin-bottom: 32px;
+}
+
+.mob-menu__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #212121;
+  transition: color var(--timing-duration);
+}
+.mob-menu__link:hover, .mob-menu__link:focus {
+  color: var(--accent-color);
+}
+
+.mob-menu__connect-list {
+  margin-bottom: 64px;
+}
+
+.mob-menu__connect-item:first-child {
+  margin-bottom: 32px;
+}
+
+.mob-menu__connect-link {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+  transition: color var(--timing-duration);
+}
+
+.mob-menu__connect-link--email {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: #757575;
+  transition: color var(--timing-duration);
+}
+.mob-menu__connect-link--email:hover, .mob-menu__connect-link--email:focus {
+  color: var(--accent-color);
+}
+
+.mob-menu__soc-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mob-menu__soc-item:not(:last-child) {
+  margin-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mob-menu__soc-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+  padding-right: 10px;
+  transition: color var(--timing-duration);
+}
+
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -390,6 +556,11 @@ img {
 .main-nav {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 767.9px) {
+  .main-nav {
+    display: none;
+  }
 }
 
 .navigation {
@@ -438,38 +609,64 @@ img {
 
 .header {
   border-bottom: 1px solid #ececec;
+  position: relative;
 }
 
-.conteiner.header__conteiner {
+.header__conteiner {
   display: flex;
   align-items: center;
 }
 
 .connection {
-  display: flex;
   margin-left: auto;
   align-items: center;
 }
+@media screen and (max-width: 767.8px) {
+  .connection {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .connection {
+    display: flex;
+  }
+}
+
+.connection__item {
+  margin: 0 auto;
+}
 
 .connection .connection__item + .connection__item {
-  margin-left: 50px;
+  padding-top: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .connection .connection__item + .connection__item {
+    margin-left: 50px;
+    padding-top: 0;
+  }
 }
 
 .connection__link {
   display: flex;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
   text-decoration: none;
   list-style: none;
-  padding-top: 32px;
-  padding-bottom: 32px;
   transition: color var(--timing-duration);
 }
 .connection__link:hover, .connection__link:focus, .connection__link:active {
   color: var(--accent-color);
+}
+@media screen and (min-width: 1200px) {
+  .connection__link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 
 .connection__icon {
@@ -485,7 +682,7 @@ img {
 }
 
 .hero-content {
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   background-image: linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mobile/hero-mobile.jpg);
   background-color: #C4C4C4;
@@ -802,7 +999,9 @@ img {
 }
 
 .card-list__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-decoration: none;
   transition: box-shadow var(--timing-duration);
 }
@@ -811,6 +1010,7 @@ img {
 }
 
 .card-box {
+  flex-grow: 1;
   padding: 20px 24px;
   border: 1px solid #eeeeee;
 }

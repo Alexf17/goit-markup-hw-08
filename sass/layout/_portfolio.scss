@@ -42,6 +42,7 @@
     
         @include tablet {
             margin: 15px;
+            // width: calc(50% - 30px);
             max-width: 354px;
             flex-basis: calc((100% - 60px)/2);
         }
@@ -53,8 +54,10 @@
 }
 
 .card-list__link {
-    display: block;
-    
+    // display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     text-decoration: none;
     transition: box-shadow var(--timing-duration);
 
@@ -67,6 +70,7 @@
 }
 
 .card-box {
+    flex-grow: 1;
     padding: 20px 24px;
     border: 1px solid #eeeeee;
 }

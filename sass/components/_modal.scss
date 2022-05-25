@@ -27,8 +27,8 @@
     content: "";
     top: 50%;
     left: 50%;
-    width: 528px;
-    height: 581px;
+    width: 450px;
+    height: 609px;
     color: var(--main-text-color);
     font-family: Roboto, sans-serif;
     letter-spacing: 0.03em;
@@ -41,6 +41,11 @@
     transition: transform var(--timing-duration),
         background-color var(--timing-duration),
         box-shadow var(--timing-duration);
+
+    @include desktop {
+        width: 528px;
+        height: 581px;
+    }
 }
 
 .modal-button {
@@ -79,10 +84,14 @@
 .modal-title {
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
     color: var(--main-title-color);
     margin-bottom: 12px;
+
+    @include desktop {
+        line-height: 1.15;
+    }
 }
 
 .form-field {
@@ -169,9 +178,14 @@
 .check-text {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.03em;
+
+    @include desktop {
+        font-size: 14px;
+        line-height: 1.7;
+    }
 }
 
 .box-icon {

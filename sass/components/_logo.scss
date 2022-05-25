@@ -1,8 +1,8 @@
 .logo {
     font-family: 'Raleway';
     font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
+    font-size: 24px;
+    line-height: 1.17;
     letter-spacing: 0.03em;
     color: var(--accent-color);
     width: 134px;
@@ -10,6 +10,8 @@
 
     @include desktop {
         width: 145px;
+        font-size: 26px;
+        line-height: 1.19;
     }
 }
 
