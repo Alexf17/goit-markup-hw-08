@@ -1,10 +1,8 @@
 .client-list {
-    @include tablet {
         display: flex;
         flex-wrap: wrap;
         margin: -15px;
         align-content: space-between;
-    }
 }
 
 .client-list__item {
